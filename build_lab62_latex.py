@@ -129,6 +129,7 @@ def build_tex() -> str:
 \textbf{Course} & IA 642 Defensive Security & \textbf{Lab} & 6.2 (Week 06) \\
 \textbf{Date} & October 7, 2026 & \textbf{Target} & UnCrackable-Level1 \\
 \textbf{Host tools} & jadx 1.5.1, Frida 16.5.9 & \textbf{Device} & AVD IA642\_API30 (Google APIs x86\_64) \\
+\textbf{GitHub} & \multicolumn{3}{Y@{}}{\url{https://github.com/unaisshazan/ia642-week06-lab62-mobile-masvs-frida}} \\
 \bottomrule
 \end{tabularx}
 
@@ -143,15 +144,26 @@ server-side authorization.
 
 \section*{Environment}
 \begin{itemize}
-  \item Android emulator \texttt{IA642\_API30} (Google APIs x86\_64, not Play Store) so \texttt{adb root} works.
-  \item APK SHA-256 matches the lab handout: \texttt{""" + sha + r"""}
-  \item \texttt{adb install -r} succeeded; build tags \texttt{""" + tags.strip() + r"""}; \texttt{su} at \texttt{""" + su.strip() + r"""}.
-  \item Frida client/server 16.5.9; hook script \texttt{bypass\_root.js}; jadx decompile under \texttt{decomp/}.
+  \item Android emulator: \texttt{IA642\_API30} (Google APIs x86\_64, not Play Store) so \texttt{adb root} works.
+  \item Install: \texttt{adb install -r} succeeded.
+  \item Build tags: \texttt{dev-keys}; \texttt{su} path: \path{/system/xbin/su}.
+  \item Frida client/server 16.5.9; hook script \texttt{bypass\_root.js}; jadx output in \texttt{decomp/}.
+  \item Public evidence repo (APK, decompiled sources, screenshots; no report PDF):
+        \url{https://github.com/unaisshazan/ia642-week06-lab62-mobile-masvs-frida}
 \end{itemize}
 """
 
     body: list[str] = []
-    body.append(listing("Install / integrity evidence", f"{install}\nSHA-256={sha}\nro.build.tags={tags}\nsu={su}"))
+    # Keep long hash in listing so it does not stretch/break in texttt
+    body.append(
+        listing(
+            "Install / integrity evidence",
+            f"{install}\n"
+            f"SHA-256={sha.strip()}\n"
+            f"ro.build.tags={tags.strip()}\n"
+            f"su={su.strip()}",
+        )
+    )
 
     body.append(r"\section*{Part A --- Observe the control}")
     body.append(
