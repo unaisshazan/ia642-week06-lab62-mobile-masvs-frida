@@ -1,0 +1,5 @@
+[*] hooks installed
+[root] c.a() -> false
+[root] c.b() -> false
+[root] c.c() -> false
+[crypto] secret = I want to believe

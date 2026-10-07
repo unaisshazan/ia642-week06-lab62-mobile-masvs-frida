@@ -1,0 +1,12 @@
+.venv/
+latex_build/
+tools/
+tmp/
+*.pdf
+*.zip
+*.xz
+frida-server
+__pycache__/
+*.pyc
+.DS_Store
+01_root_detected_raw.png

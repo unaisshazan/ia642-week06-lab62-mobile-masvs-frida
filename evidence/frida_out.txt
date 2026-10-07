@@ -1,0 +1,16 @@
+     ____
+    / _  |   Frida 17.23.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to Android Emulator 5554 (id=emulator-5554)
+Spawning `owasp.mstg.uncrackable1`...
+Spawned `owasp.mstg.uncrackable1`. Resuming main thread!
+[Android Emulator 5554::owasp.mstg.uncrackable1 ]-> 
+Thank you for using Frida!
